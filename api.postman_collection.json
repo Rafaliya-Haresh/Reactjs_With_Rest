@@ -1,0 +1,349 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Facebook Shopping API - Challenge",
+		"_postman_id": "7336e89c-460a-f430-6b87-2d90b1cb778f",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth - Login",
+			"request": {
+				"url": "{{host}}/v1/auth/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"admin@beautitag.com\",\n\t\"password\":\"abcd1234\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Auth - Logout",
+			"request": {
+				"url": "localhost:3000/v1/auth/logout",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer Xdsj8PAyq616F8kaKd0AasUgjpTkWuQ7Aqu0hIiEM4XpgWNyai",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "ProductLine - Get Product Lines",
+			"request": {
+				"url": "{{host}}/v1/productLines",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{admin_token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "ProductLine - Get Product Line By Id",
+			"request": {
+				"url": "{{host}}/v1/productLines/58e878d61f9fe521a08e2663",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{admin_token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "ProductLine - Create Product Line",
+			"request": {
+				"url": "{{host}}/v1/productLines",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{admin_token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"product_line\":{\n\t\t\"name\" : \"Product Line 5\",\n\t\t\"sort\" : 5,\n\t\t\"enabled\" : true\n\t}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "ProductLine - Update Product Line By Id",
+			"request": {
+				"url": "{{host}}/v1/productLines/58e878d61f9fe521a08e2663",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{admin_token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"product_line\":{\n\t\t\"name\":\"Product Line 2\",\n\t\t\"sort\":2,\n\t\t\"enabled\":true\n\t}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "ProductLine - Delete Product Line By Id",
+			"request": {
+				"url": "{{host}}/v1/productLines/58e878e31f9fe521a08e2666",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{admin_token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Product - Get Products",
+			"request": {
+				"url": "{{host}}/v1/products",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{admin_token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Product - Get Products by product_line_id",
+			"request": {
+				"url": {
+					"raw": "{{host}}/v1/products?product_line_id=58e878ba1f9fe521a08e2662",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v1",
+						"products"
+					],
+					"query": [
+						{
+							"key": "product_line_id",
+							"value": "58e878ba1f9fe521a08e2662",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{admin_token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Product - Get Product By Id",
+			"request": {
+				"url": "{{host}}/v1/products/58e87cd970b99e22ae57741d",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{admin_token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"product\":{\n\t\t\"product_line_id\":\"58e878ba1f9fe521a08e2662\",\n\t\t\"name\":\"Product 6\",\n\t\t\"description\":\"Product 6 description\",\n\t\t\"status\":\"in_stock\",\n\t\t\n\t\t\"use_original_price\":true,\n\t\t\"original_price\":199.99,\n\t\t\"discounted_price\":99.99,\n\t\t\n\t\t\"sort\":6,\n\t\t\"picture\":\"\",\n\t\t\"enabled\":true\n\t}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Product - Create Product",
+			"request": {
+				"url": "{{host}}/v1/products",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{admin_token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"product\":{\n\t\t\"product_line_id\":\"58e878ba1f9fe521a08e2662\",\n\t\t\"name\":\"Product 6\",\n\t\t\"description\":\"Product 6 description\",\n\t\t\"status\":\"in_stock\",\n\t\t\n\t\t\"use_original_price\":true,\n\t\t\"original_price\":199.99,\n\t\t\"discounted_price\":99.99,\n\t\t\n\t\t\"sort\":6,\n\t\t\"picture\":\"\",\n\t\t\"enabled\":true\n\t}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Product - Update Product By Id",
+			"request": {
+				"url": "{{host}}/v1/products/58e87cd970b99e22ae57741d",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{admin_token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"product\":{\n\t\t\"product_line_id\":\"58e878ba1f9fe521a08e2662\",\n\t\t\"name\":\"Product 6 new name\",\n\t\t\"description\":\"Product 6 description\",\n\t\t\"status\":\"in_stock\",\n\t\t\n\t\t\"use_original_price\":false,\n\t\t\"original_price\":199.99,\n\t\t\"discounted_price\":99.99,\n\t\t\n\t\t\"sort\":6,\n\t\t\"picture\":\"\",\n\t\t\"enabled\":true\n\t}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Product - Delete Product By Id",
+			"request": {
+				"url": "{{host}}/v1/products/58e87cd970b99e22ae57741d",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{admin_token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
