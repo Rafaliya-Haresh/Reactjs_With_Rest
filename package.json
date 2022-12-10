@@ -9,7 +9,7 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "css-loader": "^0.28.4",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "history": "^4.9.0",
     "mongoose": "^5.4.13",
     "prop-types": "^15.5.10",
